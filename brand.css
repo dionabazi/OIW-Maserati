@@ -1,0 +1,634 @@
+body,
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 5;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+#main-menu {
+    display: block;
+    height: 100px;
+    width: 100%;
+    background: #3D0E61;
+    margin: 0px;
+    z-index: 9;
+}
+
+#main-menu ul {
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 9;
+}
+
+#main-menu li {
+    list-style-type: none;
+    font-size: 2rem;
+}
+
+#main-menu a {
+    color: #B9FAF8;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#main-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+#hamburger-menu {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: inline;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Cabin', Sans-serif;
+    background: linear-gradient( to bottom, #fff, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+}
+
+#hamburger-menu #sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+    color: #222222;
+    font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+    padding-left: 0px;
+}
+
+#hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+}
+
+#hamburger-menu a {
+    color: #222222;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input:checked+#hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+
+#hamburger-input:checked~.overlay {
+    visibility: visible;
+    opacity: 0.4;
+}
+
+
+/*
+Burger
+*/
+
+.brand {
+    background-image: url(./hoodie.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.brand::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 50%);
+}
+
+.brand header {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    padding: 2rem;
+    text-align: center;
+}
+
+.brand header img {
+    position: relative;
+    cursor: pointer;
+}
+
+.brand .row {
+    display: flex;
+}
+
+.brand nav {
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    padding: 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.brand nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.brand nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.brand nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    top: 0;
+    background: #fff;
+    height: 1.2px;
+    top: 20px;
+}
+
+.brand nav ul li a:hover::before {
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+.brand .col {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: #fff;
+    font-family: sans-serif;
+    top: 40%;
+    font-size: 35px;
+}
+
+.brand .rows {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: #fff;
+    font-family: sans-serif;
+    top: 40%;
+    font-size: 35px;
+}
+
+.brand .btn {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 45%;
+}
+
+.brand button a {
+    text-decoration: none;
+}
+
+.brand button {
+    background-color: transparent;
+    width: 200px;
+    border: 1px solid #fff;
+    height: 50px;
+    color: #fff;
+    animation: color 1s linear infinite;
+    transition: .4s ease-in;
+    background: linear-gradient(to left, transparent 50%, #fff 50%) right;
+    background-size: 200% 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+}
+
+.brand button:hover {
+    background-position: left;
+    color: black !important;
+    transition: 2s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.container {
+    background-image: url(./fragment-design-maserati-hiroshi-fujiwara-capsule-collection-collaboration-hbx-release-information-0.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.container .row {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    color: #fff;
+    font-family: sans-serif;
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+.container .col {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    color: #fff;
+    font-family: sans-serif;
+    padding-left: 50px;
+    padding-top: 100px;
+    font-size: 50px;
+}
+
+.container .rows {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    color: #fff;
+    font-family: sans-serif;
+    padding-left: 50px;
+    font-size: 50px;
+}
+
+.container .btn {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+.container button {
+    background-color: transparent;
+    width: 200px;
+    border: 1px solid #fff;
+    height: 50px;
+    color: #fff;
+    animation: color 1s linear infinite;
+    transition: .4s ease-in;
+    background: linear-gradient(to left, transparent 50%, #fff 50%) right;
+    background-size: 200% 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-position: left;
+    color: black !important;
+    transition: 2s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.blog {
+    background-image: url(./classic.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.blog::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 50%);
+}
+
+.blog .col {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    color: #fff;
+    padding-top: 150px;
+    padding-left: 100px;
+    font-family: sans-serif;
+    font-size: 50px;
+}
+
+.blog .row {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 100px;
+    font-family: sans-serif;
+}
+
+.blog .rows {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 100px;
+    font-family: sans-serif;
+}
+
+.blog .color {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    color: #fff;
+    padding-top: 50px;
+    padding-left: 100px;
+    font-family: sans-serif;
+}
+
+.blog .btn {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.blog button {
+    background-color: transparent;
+    width: 200px;
+    border: 1px solid #fff;
+    height: 50px;
+    color: #fff;
+    animation: color 1s linear infinite;
+    transition: .4s ease-in;
+    background: linear-gradient(to right, transparent 50%, #fff 50%) left;
+    background-size: 200% 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+}
+
+.blog button:hover {
+    background-position: right;
+    transition: 1s cubic-bezier(0.23, 1, 0.320, 1);
+    color: black;
+}
+
+.foot {
+    background-color: #000;
+    padding: 5rem;
+    width: 100%;
+    color: #fff;
+}
+
+.foot .col {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: #232323;
+    font-size: 10px;
+    bottom: 40px;
+    padding-right: 150px;
+}
+
+.foot nav ul li a {
+    text-decoration: none;
+    color: #232323;
+}
+
+.foot .col::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0;
+    background: #fff;
+    height: 1.2px;
+    top: 25px;
+}
+
+.foot .col:hover::before {
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 30%;
+}
+
+.foot nav {
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+.foot nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    color: #232323;
+    cursor: pointer;
+    position: relative;
+}
+
+.foot nav ul li a {
+    text-decoration: none;
+}
+
+.foot .row {
+    position: relative;
+    display: flex;
+}
+
+.foot .row nav ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    background: #fff;
+    height: 0.1px;
+    top: 30px;
+}
+
+.foot .row nav ul li:hover::before {
+    color: rgb(199, 208, 19);
+    width: 100%;
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+@media (0px <=width <=650px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .row nav ul {
+        display: flex;
+        justify-content: space-between;
+        row-gap: 20px;
+        flex-direction: column;
+    }
+    .foot .col {
+        padding: 0;
+    }
+}
+
+@media (651px <=width <=897px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .row nav ul {
+        flex-direction: column;
+        display: flex;
+        row-gap: 20px;
+        justify-content: space-between;
+    }
+    .foot .col {
+        padding: 0;
+    }
+}
+
+@media (898px <=width <=1024px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .row nav ul {
+        justify-content: space-between;
+        row-gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .foot .col {
+        padding: 0;
+    }
+}
+
+@media (1025px <=width <=1241px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .row nav ul li {
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+    .foot .col {
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width:1241px) {}

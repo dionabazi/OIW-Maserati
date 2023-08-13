@@ -1,0 +1,497 @@
+body,
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 5;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+#main-menu {
+    display: block;
+    height: 100px;
+    width: 100%;
+    background: #3D0E61;
+    margin: 0px;
+    z-index: 9;
+}
+
+#main-menu ul {
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 9;
+}
+
+#main-menu li {
+    list-style-type: none;
+    font-size: 2rem;
+}
+
+#main-menu a {
+    color: #B9FAF8;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#main-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+#hamburger-menu {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: inline;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Cabin', Sans-serif;
+    background: linear-gradient( to bottom, #fff, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+}
+
+#hamburger-menu #sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+    color: #222222;
+    font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+    padding-left: 0px;
+}
+
+#hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+}
+
+#hamburger-menu a {
+    color: #222222;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input:checked+#hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+
+#hamburger-input:checked~.overlay {
+    visibility: visible;
+    opacity: 0.4;
+}
+
+
+/*
+Burger
+*/
+
+.container {
+    background-image: url(./Maserati_Classiche_01_4_3.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 50%);
+}
+
+.container header {
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    padding: 0.5rem;
+    text-align: start;
+}
+
+.container header img {
+    position: relative;
+    cursor: pointer;
+    padding: 1.5rem;
+}
+
+.container header .row {
+    display: flex;
+}
+
+.container nav {
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 155px;
+    padding: 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.container nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.container nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container nav ul li::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    top: 0;
+    background: #fff;
+    height: 1.2px;
+    top: 20px;
+}
+
+.container nav ul li:hover::before {
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+.container .btn {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    top: 20%;
+    left: 5%;
+}
+
+.container .btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container button {
+    background-color: transparent;
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    font-family: sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+.container .buttton {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    top: 25%;
+    left: 5%;
+}
+
+.container .buttton a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container button {
+    background-color: transparent;
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    font-family: sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+.container .certificate {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-self: start;
+    top: 30%;
+    left: 5%;
+}
+
+.container .certificate button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container button {
+    background-color: transparent;
+    border: none;
+    width: 300px;
+    height: 50px;
+    font-family: sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container .colon {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    top: 35%;
+    left: 5%;
+}
+
+.container button {
+    background-color: transparent;
+    width: 400px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+}
+
+.container button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.foot {
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+    color: #242424;
+    padding: 5rem;
+}
+
+.foot .row {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: #242424;
+    bottom: 40px;
+    padding-right: 150px;
+    font-size: 10px;
+}
+
+.foot nav ul li a {
+    text-decoration: none;
+    color: #242424;
+}
+
+.foot .row::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    top: 0;
+    background: #fff;
+    height: 1.2px;
+    top: 25px;
+}
+
+.foot .row:hover::before {
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 25%;
+}
+
+.foot nav {
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #242424;
+}
+
+.foot nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.foot nav ul li::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    top: 0;
+    background: #fff;
+    height: 1.2px;
+    top: 30px;
+}
+
+.foot nav ul li:hover::before {
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+#logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+@media (0px <=width <=650px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .col nav ul {
+        flex-direction: column;
+        row-gap: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .foot .row {
+        padding: 0;
+    }
+}
+
+@media (651px <=width <=897px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .col nav ul {
+        flex-direction: column;
+        row-gap: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .foot .row {
+        padding: 0;
+    }
+}
+
+@media (898px <=width <=1024px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .col nav ul {
+        flex-direction: column;
+        display: flex;
+        row-gap: 20px;
+        justify-content: space-between;
+    }
+    .foor .row {
+        padding: 0;
+    }
+}
+
+@media (1025px <=width <=1241px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .foot {
+        padding: 50px 5px;
+    }
+    .foot .col nav ul li {
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+    .foot .row {
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width:1241px) {}
