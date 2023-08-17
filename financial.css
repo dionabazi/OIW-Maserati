@@ -361,7 +361,7 @@ Burger
     width: 100%;
 }
 
-@media (0px <=width <=650px) {
+@media (max-width:650px) {
     body,
     html {
         overflow-x: hidden;

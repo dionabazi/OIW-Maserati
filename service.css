@@ -344,7 +344,7 @@ Burger
     transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-@media (0px <=width <=650px) {
+@media (max-width:650px) {
     body,
     html {
         overflow-x: hidden;
