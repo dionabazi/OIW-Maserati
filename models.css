@@ -144,6 +144,7 @@ Burger
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    background-attachment: fixed;
 }
 
 .blog::before {
@@ -334,6 +335,7 @@ Burger
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    background-attachment: fixed;
 }
 
 .container-o1::before {
@@ -421,6 +423,7 @@ Burger
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    background-attachment: fixed;
 }
 
 .container-o2::before {
@@ -582,6 +585,15 @@ Burger
         padding: 0;
         box-sizing: border-box;
     }
+    .blog {
+        background-attachment: fixed;
+    }
+    .container-o1 {
+        background-attachment: fixed;
+    }
+    .container-o2 {
+        background-attachment: fixed;
+    }
     header {
         display: none;
     }
@@ -684,6 +696,15 @@ Burger
         padding: 0;
         box-sizing: border-box;
     }
+    .blog {
+        background-attachment: fixed;
+    }
+    .container-o1 {
+        background-attachment: fixed;
+    }
+    .container-o2 {
+        background-attachment: fixed;
+    }
     header {
         display: none;
     }
@@ -771,6 +792,15 @@ Burger
         padding: 0;
         box-sizing: border-box;
     }
+    .blog {
+        background-attachment: fixed;
+    }
+    .container-o1 {
+        background-attachment: fixed;
+    }
+    .container-o2 {
+        background-attachment: fixed;
+    }
     .container img {
         width: 500px;
     }
@@ -839,6 +869,15 @@ Burger
     }
     .container img {
         width: 520px;
+    }
+    .blog {
+        background-attachment: fixed;
+    }
+    .container-o1 {
+        background-attachment: fixed;
+    }
+    .container-o2 {
+        background-attachment: fixed;
     }
     .container img:hover {
         width: 540px;

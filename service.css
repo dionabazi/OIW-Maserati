@@ -357,6 +357,9 @@ Burger
     .container {
         background-position: right;
     }
+    .container {
+        background-attachment: fixed;
+    }
     .blog {
         height: 100%;
     }
@@ -395,6 +398,9 @@ Burger
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    .container {
+        background-attachment: fixed;
     }
     .blog img {
         width: 500px;
@@ -435,6 +441,9 @@ Burger
     .blog img {
         width: 550px;
     }
+    .container {
+        background-attachment: fixed;
+    }
     .blog img:hover {
         width: 500px;
     }
@@ -467,6 +476,9 @@ Burger
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    .container {
+        background-attachment: fixed;
     }
     .foot {
         padding: 50px 5px;
