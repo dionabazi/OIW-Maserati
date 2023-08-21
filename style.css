@@ -155,6 +155,7 @@ Burger
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    background-attachment: fixed;
 }
 
 .container::before {
@@ -368,6 +369,7 @@ Burger
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    background-attachment: fixed;
 }
 
 .container-o3::before {
@@ -542,6 +544,12 @@ Burger
         margin: 0;
         box-sizing: border-box;
     }
+    .container {
+        background-attachment: fixed;
+    }
+    .container-o3 {
+        background-attachment: fixed;
+    }
     header {
         display: none;
     }
@@ -612,6 +620,12 @@ Burger
         margin: 0;
         box-sizing: border-box;
     }
+    .container {
+        background-attachment: fixed;
+    }
+    .container-o3 {
+        background-attachment: fixed;
+    }
     header {
         display: none;
     }
@@ -675,6 +689,12 @@ Burger
         margin: 0;
         box-sizing: border-box;
     }
+    .container {
+        background-attachment: fixed;
+    }
+    .container-o3 {
+        background-attachment: fixed;
+    }
     .blog {
         height: 100%;
     }
@@ -710,6 +730,12 @@ Burger
     }
     .foot {
         padding: 50px 5px;
+    }
+    .container {
+        background-attachment: fixed;
+    }
+    .container-o3 {
+        background-attachment: fixed;
     }
     .foot .row nav ul li {
         justify-content: space-between;
